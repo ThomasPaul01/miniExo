@@ -14,26 +14,29 @@ export interface MovieDoc extends Document {
   genre?: string;
 }
 
-const MovieSchema = new Schema<MovieDoc>({
-  title: { 
-    type: String,
-    required: true,
-    trim: true
-},
-  director: {
-    type: String,
-    required: true,
-    trim: true 
-},
-  year: {
-    type: Number,
-    required: true,
-    min: 1800
+const MovieSchema = new Schema<MovieDoc>(
+  {
+    title: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    director: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    year: {
+      type: Number,
+      required: true,
+      min: 1800,
+    },
+    genre: {
+      type: String,
+      trim: true,
+    },
   },
-  genre: {
-    type: String,
-    trim: true
-  }
-}, { timestamps: true });
+  { timestamps: true },
+);
 
 export const Movie = model<MovieDoc>('Movie', MovieSchema);

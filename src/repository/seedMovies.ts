@@ -30,7 +30,6 @@ const docs: MovieSeed[] = [
   },
 ];
 
-
 async function main() {
   const client = new MongoClient(uri);
   try {

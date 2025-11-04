@@ -1,20 +1,19 @@
-import express, { Request, Response } from 'express'
-import moviesRouter from './movies'
+import express, { Request, Response } from 'express';
+import moviesRouter from './movies';
 
-const app = express()
+const app = express();
 
-
-app.use(express.json()); 
+app.use(express.json());
 // Logger très verbeux: activable en mettant LOG_REQUEST_HEADERS=1
 app.use((req, res, next) => logger(req, res, next));
 
 // Routes
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  res.send('Hello World!');
+});
 
 // Movies API
-app.use('/movies', moviesRouter)
+app.use('/movies', moviesRouter);
 
 function logger(req: Request, _res: Response, next: express.NextFunction) {
   if (process.env.LOG_REQUEST_HEADERS === '1') {

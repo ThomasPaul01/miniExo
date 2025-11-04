@@ -59,6 +59,7 @@ npm run seed:movies
 ## Exemples
 
 - Créer:
+
 ```
 curl -X POST http://localhost:3000/movies \
   -H "Content-Type: application/json" \
@@ -66,6 +67,7 @@ curl -X POST http://localhost:3000/movies \
 ```
 
 - Recherche:
+
 ```
 # films dont le titre ou le réalisateur matche "nolan", genre sci-fi, entre 2000 et 2020
 curl "http://localhost:3000/movies/search?keyword=nolan&genre=sci-fi&minYear=2000&maxYear=2020"
