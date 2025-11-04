@@ -1,13 +1,19 @@
 {
   "scripts": {
-    "schema:cinema": "ts-node ./src/repository/testDb.ts"
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "ts-node ./src/app.ts",
+    "schema:cinema": "ts-node ./src/repository/testDb.ts",
+    "seed:movies": "ts-node ./src/repository/seedMovies.ts"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "mongodb": "^6.20.0",
-    "node": "^25.1.0"
+    "mongoose": "^8.19.2"
   },
   "devDependencies": {
+    "@types/express": "^5.0.5",
     "@types/node": "^24.10.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"

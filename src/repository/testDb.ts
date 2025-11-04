@@ -1,9 +1,12 @@
+import 'dotenv/config';
 import { MongoClient } from "mongodb";
 
 // Le plus simple possible: se connecter, lister les collections de "Cinema",
 // et afficher les clés du premier document de chaque collection.
-const uri = process.env.MONGODB_URI ||
-	"mongodb+srv://thomaspaul7794_db_user:cmMt6X6lzgpss2zI@cluster0.jw8mwhh.mongodb.net/?appName=Cluster0";
+const uri = process.env.MONGODB_URI ?? "";
+if (!uri) {
+  throw new Error("MONGODB_URI manquant. Définis-le dans .env ou l'environnement.");
+}
 
 async function main() {
 	const client = new MongoClient(uri);
